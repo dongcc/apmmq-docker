@@ -1,12 +1,10 @@
 # apmmq-docker
-IBM performance management MQ monitoring agent docker support
+Monitoring a queue manager running in a Docker container
 
 # Overview
 
 By using the Dockerfile and scripts that are provided in this repository, you can use IBM Performance Management (http://www-03.ibm.com/software/products/en/application-performance-management) to monitor the IBM MQ Advanced for Developers (http://www-03.ibm.com/software/products/en/ibm-mq-advanced-for-developers) that is running inside a Docker container. 
 Any feedback regarding the function that is described in this article will be very much appreciated. 
-
-
 
 # Installing Monitoring Agent for WebSphere MQ
 
