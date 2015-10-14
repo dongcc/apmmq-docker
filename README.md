@@ -10,7 +10,7 @@ Any feedback regarding the function that is described in this article will be ve
 
 # Installing Monitoring Agent for WebSphere MQ
 
-Install the Monitoring Agent for WebSphere MQ on your Docker host. The default installation directory on Linux systems is /opt/ibm/apm/agent. For more information on installing the agent, see the ¡°Installing your agents¡± section in the IBM Performance Management Knowledge Center (http://www-01.ibm.com/support/knowledgecenter/SSHLNR_8.1.1/com.ibm.pm.doc/install/onprem_install_intro.htm). 
+Install the Monitoring Agent for WebSphere MQ on your Docker host. The default installation directory on Linux systems is /opt/ibm/apm/agent. For more information on installing the agent, see the "Installing your agents" section in the IBM Performance Management Knowledge Center (http://www-01.ibm.com/support/knowledgecenter/SSHLNR_8.1.1/com.ibm.pm.doc/install/onprem_install_intro.htm). 
 
 Note: if you do not want to use the MQ Agent on Docker host directly, you must set SKIP_PRECHECK to YES before installation. For example:
 
@@ -40,9 +40,9 @@ docker commit -m "enable APM monitoring" -a "DCC"  ${CONTAINER_ID} ibmimages/mqa
 
 You will have a new image in your repository named ibmimages/mqadvanced:v2.
 
-When you run the image, accept the terms of the IBM MQ for Developers license by specifying the environment variable ¡°LICENSE¡± equal to ¡°accept¡±. You can also view the license terms by setting this variable to ¡°view¡±. If you don¡¯t set the variable, the container is ended with a usage statement. You can view the license in a different language by setting the ¡°LANG¡± environment variable.
+When you run the image, accept the terms of the IBM MQ for Developers license by specifying the environment variable "LICENSE" equal to "accept". You can also view the license terms by setting this variable to "view". If you don't set the variable, the container is ended with a usage statement. You can view the license in a different language by setting the "LANG" environment variable.
 
-In addition to accepting the license, you must specify a Queue Manager name by using the ¡°MQ_QMGR_NAME¡± environment variable. For more information, see the ibm-messaging GitHub (http://github.com/ibm-messaging/mq-docker).
+In addition to accepting the license, you must specify a Queue Manager name by using the "MQ_QMGR_NAME" environment variable. For more information, see the ibm-messaging GitHub (http://github.com/ibm-messaging/mq-docker).
 
 You must also mount your MQ data path and the monitoring agent home directory on Docker host into the Docker container. If you run multiple containers, you are sharing the same Performance Management installation on the Docker host.
 
@@ -79,9 +79,9 @@ docker build -t ibmcom/apm4mq .
 An image called ibmcom/apm4mq is created in your local Docker registry.
 
 
-When you run the image, accept the terms of the IBM MQ for Developers license by specifying the environment variable ¡°LICENSE¡± equal to ¡°accept¡±. You can also view the license terms by setting this variable to ¡°view¡±. If you don¡¯t set the variable, the container is ended with a usage statement. You can view the license in a different language by setting the ¡°LANG¡± environment variable.
+When you run the image, accept the terms of the IBM MQ for Developers license by specifying the environment variable "LICENSE" equal to "accept". You can also view the license terms by setting this variable to "view". If you don't set the variable, the container is ended with a usage statement. You can view the license in a different language by setting the "LANG" environment variable.
 
-In addition to accepting the license, you must specify a Queue Manager name by using the ¡°MQ_QMGR_NAME¡± environment variable. For more information, see the ibm-messaging GitHub (http://github.com/ibm-messaging/mq-docker).
+In addition to accepting the license, you must specify a Queue Manager name by using the "MQ_QMGR_NAME" environment variable. For more information, see the ibm-messaging GitHub (http://github.com/ibm-messaging/mq-docker).
 
 You must also mount your MQ data path and the monitoring agent home directory on Docker host into the Docker container. If you run multiple containers, you are sharing the same Performance Management installation on the Docker host.
 
@@ -110,7 +110,7 @@ ibmcom/apm4mq                                  The image you just built.
 
 # Running administrative commands
 
-It is recommended that you configure MQ in your own custom image. However, you might need to run MQ commands directly inside the process space of the container. To run a command against a running queue manager, you can use ¡°docker exec¡±. If you run commands non-interactively under Bash, then the MQ environment will be configured correctly. For example: 
+It is recommended that you configure MQ in your own custom image. However, you might need to run MQ commands directly inside the process space of the container. To run a command against a running queue manager, you can use "docker exec". If you run commands non-interactively under Bash, then the MQ environment will be configured correctly. For example: 
 
 ~~~
 docker exec \
@@ -132,7 +132,7 @@ You can find the Performance Management logs in the agent installation directory
 Follow the steps to verify if the image is used as provided or has been customized: 
 
 1. Run a container. Make sure to open expose 1414 to the host for the container to start without errors.
-2. Run command ¡°mq-agent.sh¡± as described in section ¡°Running Administrative Commands¡± to show the status of your node. For example: 
+2. Run command "mq-agent.sh" as described in section "Running Administrative Commands" to show the status of your node. For example: 
 
 ~~~
 docker exec \
@@ -145,8 +145,8 @@ At this point, your container is running and you can access Performance Manageme
 
 # Issues and contributions
 
-For issues that are specifically related to this Docker image, please use the GitHub issue tracker (https://github.com/ibm-messaging/apmmq-docker/issues). For general issues that are related to IBM Integration Bus, or to discuss the Docker technical preview, please use the Integration Community (https://developer.ibm.com/integration/). If you submit a Pull Request related to this Docker image, please indicate in the Pull Request that you accept and agree to be bound by the terms of the [IBM Contributor License Agreement](CLA.md).
+For issues that are specifically related to this Dockerfile, please use the GitHub issue tracker (https://github.com/dongcc/apmmq-docker/issues). If you submit a Pull Request related to this Dockerfile, please indicate in the Pull Request that you accept and agree to be bound by the terms of the [IBM Contributor License Agreement](CLA.md).
 
 # License
 
-The Dockerfile and associated scripts are licensed under the [Apache License 2.0](LICENSE). IBM MQ Advanced for Developers is licensed under the IBM International License Agreement for Non-Warranted Programs. You can check the license from the image using the ¡°LICENSE=view¡± environment variable as previously described. The license can also be found [online](http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-9BUHAE). Note that this license does not permit further distribution.
+The Dockerfile and associated scripts are licensed under the [Apache License 2.0](LICENSE). IBM MQ Advanced for Developers is licensed under the IBM International License Agreement for Non-Warranted Programs. You can check the license from the image using the "LICENSE=view" environment variable as previously described. The license can also be found [online](http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?li_formnum=L-APIG-9BUHAE). Note that this license does not permit further distribution.
